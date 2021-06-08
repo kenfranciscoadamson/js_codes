@@ -23,13 +23,14 @@
             }
         </style>
     </head>
+
     <body>
         <h1>Number guessing game</h1>
 
         <p>We have selected a random number between 1 and 100. See if you can guess it in 10 turns or fewer. We'll tell you if your guess was too high or too low.</p>
 
         <div class="form">
-            <label for="guessField">Enter a guess: </label><input type="text" id="guessField" class="guessfield">
+            <label for="guessField">Enter a guess: </label><input type="text" id="guessField" class="guessField">
             <input type="submit" value="Submit guess" class="guessSubmit">
         </div>
 
@@ -40,7 +41,7 @@
         </div>
 
         <script>
-            let randomNumber = Math.floor(math.random() * 100) + 1;
+            let randomNumber = Math.floor(Math.random() * 100) + 1;
             const guesses = document.querySelector('.guesses');
             const lastResult = document.querySelector('.lastResult');
             const lowOrHi = document.querySelector('.lowOrHi');
@@ -81,7 +82,7 @@
                 guessField.focus();
             }
 
-            guessSubmit.addEventListerner('click, checkGuess');
+            guessSubmit.addEventListener('click', checkGuess);
 
             function setGameOver() {
                 guessField.disabled = true;
